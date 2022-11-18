@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <bpmn:process id="Program_Reference" name="Program Reference" isExecutable="false">
+      <bpmn:startEvent id="Start" name="Start">
+         <bpmn:outgoing>Start-My-Program</bpmn:outgoing>
+      </bpmn:startEvent>
+      <bpmn:serviceTask id="My-Program" name="My Program">
+         <bpmn:incoming>Start-My-Program</bpmn:incoming>
+         <bpmn:outgoing>My-Program-Program-Information</bpmn:outgoing>
+      </bpmn:serviceTask>
+      <bpmn:sequenceFlow id="Start-My-Program" name="" sourceRef="Start" targetRef="My-Program" />
+      <bpmn:endEvent id="End" name="End">
+         <bpmn:incoming>Program-Information-End</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="My-Program-Program-Information" name="" sourceRef="My-Program" targetRef="Program-Information" />
+      <bpmn:manualTask id="Program-Information" name="Program Information">
+         <bpmn:incoming>My-Program-Program-Information</bpmn:incoming>
+         <bpmn:outgoing>Program-Information-End</bpmn:outgoing>
+      </bpmn:manualTask>
+      <bpmn:sequenceFlow id="Program-Information-End" name="" sourceRef="Program-Information" targetRef="End" />
+   </bpmn:process>
+   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+      <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Program_Reference">
+         <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="Start">
+            <dc:Bounds x="173" y="102" width="36" height="36" />
+            <bpmndi:BPMNLabel>
+               <dc:Bounds x="179" y="145" width="24" height="14" />
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape id="ServiceTask_10de3hs_di" bpmnElement="My-Program">
+            <dc:Bounds x="260" y="80" width="100" height="80" />
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNEdge id="SequenceFlow_1ebyjaw_di" bpmnElement="Start-My-Program" bioc:stroke="black">
+            <di:waypoint x="209" y="120" />
+            <di:waypoint x="260" y="120" />
+         </bpmndi:BPMNEdge>
+         <bpmndi:BPMNShape id="EndEvent_1cnnkta_di" bpmnElement="End">
+            <dc:Bounds x="602" y="102" width="36" height="36" />
+            <bpmndi:BPMNLabel>
+               <dc:Bounds x="610" y="145" width="20" height="14" />
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNEdge id="SequenceFlow_1aomr55_di" bpmnElement="My-Program-Program-Information" bioc:stroke="black">
+            <di:waypoint x="360" y="120" />
+            <di:waypoint x="430" y="120" />
+         </bpmndi:BPMNEdge>
+         <bpmndi:BPMNShape id="ManualTask_08nrqdt_di" bpmnElement="Program-Information">
+            <dc:Bounds x="430" y="80" width="100" height="80" />
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNEdge id="SequenceFlow_1bm4thv_di" bpmnElement="Program-Information-End" bioc:stroke="black">
+            <di:waypoint x="530" y="120" />
+            <di:waypoint x="602" y="120" />
+         </bpmndi:BPMNEdge>
+      </bpmndi:BPMNPlane>
+   </bpmndi:BPMNDiagram>
+</bpmn:definitions>
