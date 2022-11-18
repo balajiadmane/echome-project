@@ -2,13 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './authentication/login/login.component';
 import { RegisterComponent } from './authentication/register/register.component';
+import { AuthGuardService } from './authGuard.service';
 import { LandingPageComponent } from './landing/landing-page/landing-page.component';
+import { LoginAuthGuardService } from './login-auth-guard.service';
 
 
 const routes: Routes = [
   {
-    path:"",
-    component:LoginComponent
+    path:"login",
+    component:LoginComponent,
+    canActivate:[LoginAuthGuardService]
   },
   {
     path:"register",
@@ -16,7 +19,13 @@ const routes: Routes = [
   },
   {
     path:"landingPage",
-    component:LandingPageComponent
+    component:LandingPageComponent,
+    canActivate:[AuthGuardService]
+  },
+  {
+    path:"**",
+    redirectTo:'/login',
+    pathMatch:'full'
   }
 ];
 

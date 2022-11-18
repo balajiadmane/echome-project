@@ -8,27 +8,35 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   constructor(
-    private http:HttpClient
+    private http: HttpClient
   ) { }
 
   // observable
-  login(userName:string,password:string) : Observable<any> {
+  login(userName: string, password: string): Observable<any> {
     return this.http.post("https://fakestoreapi.com/auth/login",
-    {
-      username:userName,
-      password:password
-    })
+      {
+        username: userName,
+        password: password
+      })
   }
 
   register() {
 
   }
 
-  setToken(token:string) : void  {
-      window.localStorage.setItem("tk",token);
+  setToken(token: string): void {
+    window.localStorage.setItem("tk", token);
   }
 
-  getToken() :string {
+  getToken(): string {
     return window.localStorage.getItem("tk");
   }
+
+
+  // check if the user is logged in or not 
+  // return false if not and return true if he is logged in
+  isAuthorizedUser() : boolean {
+     return this.getToken()!=undefined; 
+  }
+
 }
