@@ -1,0 +1,31 @@
+
+
+
+
+
+<div class="card mt-2">
+    <div class="card-body">
+        <h4>
+            {{
+                product.title
+            }}
+        </h4>
+        <img [src]="product.image" style="width: 100%;" /> 
+
+        <p>
+            {{
+                product.description
+            }}
+        </p>
+        <b>
+            {{
+                product.price | currency:'USD'
+            }}
+        </b>
+
+        <button class="btn btn-outline-success" style="float: right;">
+            Checkout
+        </button>
+
+    </div>
+</div>
