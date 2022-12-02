@@ -32,11 +32,20 @@ export class AuthService {
     return window.localStorage.getItem("tk");
   }
 
-
   // check if the user is logged in or not 
   // return false if not and return true if he is logged in
   isAuthorizedUser() : boolean {
      return this.getToken()!=undefined; 
   }
 
+  logout() {
+      window.localStorage.clear();
+  }
+
 }
+
+/**
+ * 
+ *     1) git pull
+ *    2) git checkout 19-11-2022
+ */
