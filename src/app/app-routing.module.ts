@@ -4,6 +4,7 @@ import { LoginComponent } from './authentication/login/login.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { AuthGuardService } from './authGuard.service';
 import { LandingPageComponent } from './landing/landing-page/landing-page.component';
+import { ProductInfoComponent } from './landing/product-info/product-info.component';
 import { LoginAuthGuardService } from './login-auth-guard.service';
 
 
@@ -21,6 +22,10 @@ const routes: Routes = [
     path:"landingPage",
     component:LandingPageComponent,
     canActivate:[AuthGuardService]
+  },
+  {
+    path:'productInfo/:id',
+    component:ProductInfoComponent
   },
   {
     path:"**",

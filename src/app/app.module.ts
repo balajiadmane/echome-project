@@ -10,10 +10,17 @@ import { RegisterComponent } from './authentication/register/register.component'
 import { LandingPageComponent } from './landing/landing-page/landing-page.component';
 import { NavbarComponent } from './landing/landing-page/navbar/navbar.component';
 import { ProductComponent } from './landing/landing-page/product/product.component';
+import { ProductInfoComponent } from './landing/product-info/product-info.component';
 
 @NgModule({
   declarations: [  
-    AppComponent, LoginComponent, RegisterComponent, LandingPageComponent, NavbarComponent, ProductComponent
+    AppComponent, 
+    LoginComponent, 
+    RegisterComponent,
+     LandingPageComponent,
+      NavbarComponent, 
+      ProductComponent, 
+      ProductInfoComponent
   ],
   imports: [
     BrowserModule,
