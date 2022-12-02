@@ -15,4 +15,7 @@ export class LandingService {
     return this.http.get<[]>("https://fakestoreapi.com/products");
   }
   
+  getSingleProductInfoById(id:any) : Observable<any> {
+    return this.http.get("https://fakestoreapi.com/products/"+id);
+  }
 }
